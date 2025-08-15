@@ -29,7 +29,7 @@ In today’s competitive job market, students and freshers often struggle to fin
 
 ###### Steps to Run
 Clone the repository:
-git clone https://github.com/mounika2906/job-recommendation-system.git
+git clone https
 
 cd job-recommendation-system
 Create and activate a virtual environment:
