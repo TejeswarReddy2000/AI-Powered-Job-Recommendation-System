@@ -1,92 +1,133 @@
 # AI-Powered-Job-Recommendation-System
 
-###### Overview
-This project is an AI-powered job recommendation system designed to help students and job seekers find the most relevant job and internship opportunities based on their skills and preferences. The system leverages modern Natural Language Processing techniques including embeddings and Large Language Models (LLMs) for personalized recommendations. The app allows users to upload their resumes or manually enter skills, then matches them against a dataset of job postings.
+## Overview
 
-###### Industry Context
-In today’s competitive job market, students and freshers often struggle to find suitable job roles that match their unique skill sets and aspirations. Traditional job portals provide large volumes of listings but lack personalized recommendation capabilities. By integrating AI, embeddings, and retrieval-augmented generation, this system aims to simplify the job search process, reduce manual effort, and improve match quality.
+The **AI-Powered Job Recommendation System** is an intelligent application designed to help students, freshers, and job seekers discover the most relevant job and internship opportunities based on their unique skills, experience, and preferences. The system uses **Natural Language Processing (NLP)**, embeddings, and **Gemini LLM** to provide personalized job recommendations that align with the user’s profile.
 
-###### Project Structure
-├── app.py # Main Streamlit application
+Users can upload resumes in PDF format or manually input skills and preferences. The system then analyzes the data, computes similarity scores with a curated dataset of job postings, and returns the best matches along with detailed recommendation explanations.
 
-├── data/
+This project demonstrates how AI can significantly improve the efficiency and effectiveness of job search by providing targeted, data-driven suggestions, reducing manual effort, and enhancing career decision-making for candidates.
 
-│ └── jobs.json # Sample job postings dataset
+---
 
-├── src/
+## Industry Context
 
-│ ├── embed_utils.py # Text embedding helper functions
+In today’s competitive job market, freshers and students often face difficulty in identifying job roles that match their skills and aspirations. Traditional job portals provide numerous listings, but most lack personalization and rely solely on keyword matching.
 
-│ ├── recommendation.py # LLM based recommendation logic
+By leveraging AI, embeddings, and **Gemini LLM**, this system addresses these challenges:
 
-│ ├── utils.py # Utility functions (e.g., loading jobs)
+* Offers **personalized job recommendations** rather than generic listings.
+* Reduces time spent browsing irrelevant job postings.
+* Helps candidates align their career choices with their skill sets and preferences.
+* Provides an interactive, easy-to-use interface for seamless experience.
 
-│ └── groq_utils.py # Groq API integration (optional)
+This approach represents the future of intelligent recruitment, where AI bridges the gap between candidates and job opportunities, making the process faster, more accurate, and user-centric.
 
-├── requirements.txt # Python dependencies
+---
 
-└── .env # Environment variables (API keys)
+## Features
 
-###### Steps to Run
-Clone the repository:
-git clone https : https://github.com/TejeswarReddy2000/AI-Powered-Job-Recommendation-System/tree/main
+* **Resume Parsing:** Extracts skills, experience, and education from uploaded PDF resumes using NLP techniques.
+* **Manual Skill Input:** Allows users to enter their skills and preferences directly.
+* **Job Matching:** Compares user profiles with job postings and calculates similarity using embeddings.
+* **AI Recommendations:** Gemini LLM generates explanations and improves recommendation relevance.
+* **Interactive Web Interface:** Built with Streamlit for easy navigation and results visualization.
+* **Customizable Dataset:** Jobs are stored in JSON format, making it easy to add or update listings.
+* **Similarity-Based Ranking:** Ranks jobs using cosine similarity or other vector similarity measures.
 
-cd job-recommendation-system
-Create and activate a virtual environment:
+---
 
+## Project Structure
+
+```
+app.py                 # Main Streamlit application
+data/
+  └── jobs.json         # Sample job postings dataset
+src/
+  ├── embed_utils.py    # Functions to generate embeddings
+  ├── recommendation.py # Gemini LLM-based recommendation logic
+  ├── utils.py          # Utility functions (e.g., load jobs)
+requirements.txt        # Python dependencies
+.env                    # Environment variables (API keys)
+```
+
+---
+
+## Technologies Used
+
+* **Python 3.8+** – Core programming language
+* **Streamlit** – Web interface for uploading resumes and displaying recommendations
+* **Gemini LLM** – AI-powered language model for personalized job recommendation explanations
+* **LangChain** – Optional framework for managing embeddings and LLM chains
+* **scikit-learn** – Similarity calculations for matching user profiles with jobs
+* **PyPDF2** – Parsing resumes in PDF format
+* **JSON/Database** – Job postings storage
+
+---
+
+## How It Works
+
+1. **User Input:** The candidate uploads a resume (PDF) or enters skills manually.
+2. **Text Extraction:** Resume text is parsed to identify skills, experience, and education.
+3. **Embeddings Generation:** User input and job postings are converted into vector embeddings.
+4. **Similarity Matching:** Cosine similarity (or other distance metrics) identifies the top-matching job postings.
+5. **LLM Recommendations:** Gemini LLM optionally generates personalized explanations for recommended jobs.
+6. **Results Display:** The Streamlit interface shows top jobs, their relevance scores, and detailed explanations.
+
+This workflow ensures that candidates receive **high-quality, personalized recommendations** quickly and efficiently.
+
+---
+
+## Setup & Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/TejeswarReddy2000/AI-Powered-Job-Recommendation-System.git
+cd AI-Powered-Job-Recommendation-System
+```
+
+2. **Create and activate a virtual environment**
+
+```bash
 python -m venv jobrec-env
-
-###### Windows
+# Windows
 jobrec-env\Scripts\activate
-
-###### Mac/Linux
+# Mac/Linux
 source jobrec-env/bin/activate
+```
 
-##### Install required packages:
+3. **Install dependencies**
+
+```bash
 pip install -r requirements.txt
+```
 
-###### Setup API keys:
-Create a .env file in the root directory and add your API keys:
+4. **Setup API keys**
+   Create a `.env` file in the root directory and add:
 
+```
 GEMINIAPI_KEY=your_GEMINI_api_key_here
+```
 
-###### Run the Streamlit app:
+5. **Run the Streamlit app**
+
+```bash
 streamlit run app.py
+```
 
-###### Open the app:
-Visit http://localhost:8501 in your browser.
+6. **Access the application**
+   Open [http://localhost:8501](http://localhost:8501) in your browser.
 
-###### How It Works
-Upload your resume (PDF) or manually enter your skills/preferences.
+---
 
-The app extracts key text from the resume or input.
+## Future Enhancements
 
-It generates embeddings for the user input and all job postings.
+* Integrate **live job scraping APIs** to update listings in real-time.
+* Add **user authentication** and **profile saving** features.
+* Expand job datasets with more industries, roles, and locations.
+* Deploy on cloud platforms for public access.
+* Enhance the **UI/UX** with advanced filters, sorting, and visualization options.
+* Incorporate **multi-language support** for global users.
+* Add **career path suggestions** and **salary predictions** using AI.
 
-Cosine similarity finds the top matching jobs from the dataset.
-
-Optionally, an LLM (via Groq or OpenAI) generates personalized recommendation explanations.
-
-Results are displayed in an interactive web UI built with Streamlit.
-
-###### Technologies Used
-Python 3.8+
-
-Streamlit for the web interface
-
-LangChain and Groq for embeddings and LLM-based recommendations
-
-scikit-learn for similarity calculations
-
-PyPDF2 for resume PDF parsing
-
-###### Future Enhancements
-Integrate live job scraping APIs (Apify, Groq jobs)
-
-Add user authentication and saved profiles
-
-Expand datasets with more diverse job listings
-
-Deploy the app on cloud services for public access
-
-Improve UI with filters, sorting, and better design
