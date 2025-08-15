@@ -29,7 +29,7 @@ In today’s competitive job market, students and freshers often struggle to fin
 
 ###### Steps to Run
 Clone the repository:
-git clone https
+git clone https : https://github.com/TejeswarReddy2000/AI-Powered-Job-Recommendation-System/tree/main
 
 cd job-recommendation-system
 Create and activate a virtual environment:
