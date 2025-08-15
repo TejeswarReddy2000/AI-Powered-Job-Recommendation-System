@@ -80,7 +80,7 @@ scikit-learn for similarity calculations
 
 PyPDF2 for resume PDF parsing
 
-Future Enhancements
+### Future Enhancements
 Integrate live job scraping APIs (Apify, Groq jobs)
 
 Add user authentication and saved profiles
